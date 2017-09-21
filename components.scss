@@ -1,0 +1,34 @@
+.navbar {
+    &.navbar-fixed,
+    &.navbar-absolute {
+        top: 0;
+        left: 0;
+
+        &.navbar-bottom {
+            top: auto;
+            bottom: 0;
+        }
+    }
+
+    &.navbar-fixed {
+        position: fixed;
+        @if $gridi-components-navbar-positions-fixed-z-index {
+            z-index: $gridi-components-navbar-positions-fixed-z-index;
+        }
+    }
+
+    &.navbar-absolute {
+        position: absolute;
+        @if $gridi-components-navbar-positions-absolute-z-index {
+            z-index: $gridi-components-navbar-positions-absolute-z-index;
+        }
+    }
+}
+
+.top-space-for-navbar {
+    @include property-by-navbar-height(padding-top);
+}
+
+.bottom-space-for-navbar {
+    @include property-by-navbar-height(padding-bottom);
+}
